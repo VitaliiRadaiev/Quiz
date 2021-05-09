@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+	<form class="question-block">
+		<div class="question-block__body container">
+			<div class="question-block__text">
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio odit dicta inventore repellat
+					veritatis voluptatum asperiores et vitae sit? Atque perspiciatis omnis non esse minus eum, similique
+					sint autem saepe!
+				</p>
+			</div>
+			<ul class="question-block__list">
+				<li>
+					1. Do you have a next-generation firewall installed?
+					<div class="question-block__group-btn">
+						<label class="question-block__btn">
+							Yes
+							<input type="radio" name="value1">
+						</label>
+						<label class="question-block__btn">
+							No
+							<input type="radio" name="value1">
+						</label>
+					</div>
+				</li>
+				<li>
+					2. Is an endpoint detection and response solution in place?
+					<div class="question-block__group-btn">
+						<label class="question-block__btn">
+							Yes
+							<input type="radio" name="value2">
+						</label>
+						<label class="question-block__btn">
+							No
+							<input type="radio" name="value2">
+						</label>
+					</div>
+				</li>
+				<li>
+					3. Is multi-factor authentication enabled for critical enterprise applications?
+					<div class="question-block__group-btn">
+						<label class="question-block__btn">
+							Yes
+							<input type="radio" name="value3">
+						</label>
+						<label class="question-block__btn">
+							No
+							<input type="radio" name="value3">
+						</label>
+					</div>
+				</li>
+				<li>
+					4. Is the cybersecurity program formalized and documented?
+					<div class="question-block__group-btn">
+						<label class="question-block__btn">
+							Yes
+							<input type="radio" name="value4">
+						</label>
+						<label class="question-block__btn">
+							No
+							<input type="radio" name="value4">
+						</label>
+				</li>
+				<li>
+					5. Is there a program in place to annually train all end-users in security awareness principles?
+					<div class="question-block__group-btn">
+						<label class="question-block__btn">
+							Yes
+							<input type="radio" name="value5">
+						</label>
+						<label class="question-block__btn">
+							No
+							<input type="radio" name="value5">
+						</label>
+					</div>
+				</li>
+			</ul>
+
+			<button type="submit" class="question-block__submit btn_global">submit</button>
+		</div>
+	</form>
+
+	<script>
+		(function questionBlockCheckedBtnHandler() {
+			let questionBlockCheckedBtns = document.querySelectorAll('.question-block .question-block__btn');
+			if (questionBlockCheckedBtns.length) {
+				questionBlockCheckedBtns.forEach(btn => {
+					let input = btn.querySelector('input[type="radio"');
+
+					btn.addEventListener('click', () => {
+
+						if (input.checked) btn.classList.add('_is-checked')
+
+						questionBlockCheckedBtns.forEach(item => {
+							let input = item.querySelector('input[type="radio"');
+
+							if (input) {
+								if (!input.checked) item.classList.remove('_is-checked')
+							}
+						})
+					})
+				})
+			}
+		})();
+	</script>
+
+	<div class="quiz-video-block">
+		<div class="container">
+			<div class="quiz-video-block__text">
+				<p>
+					An enterprise network can never be 100-percent secure, but proper hardening will eliminate
+					vulnerabilities that leave your organization susceptible to cyber attacks. This video provides an
+					overview of a typical enterprise network— and the controls and technology solutions Securance
+					recommends to maximize the security of your IT assets.
+				</p>
+			</div>
+			<div class="quiz-video-block__poster-wrap">
+				<div class="quiz-video-block__poster">
+					<picture>
+						<img src="https://staging.securanceconsulting.com/wp-content/uploads/2020/04/financial-services-1.jpg"
+							alt="img">
+					</picture>
+					<i class="play-button" data-full-screen-vimeo="148922201"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		jQuery('.play-button').click(function (event) {
+			if (jQuery(this).data('full-screen-vimeo')) {
+				var iframe = '<iframe src="https://player.vimeo.com/video/' + jQuery(this).data('full-screen-vimeo') + '?autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen ></iframe>';
+				let $parent = this.closest('.quiz-video-block__poster');
+				if($parent) {
+					$parent.innerHTML = iframe;
+				}
+			}
+		});
+	</script>
+
+	<div class="quiz-popup" id="popupMessage">
+		<div class="quiz-popup_body">
+			<div class="quiz-popup_content">
+				<div class="quiz-popup__close close-popup"><span></span></div>
+
+				Your network hardening score is:
+
+				<div class="quiz-popup__rating">
+					<div class="quiz-popup__rating-num">4</div>
+					<div class="quiz-popup__rating-text">Needs Improvement</div>
+				</div>
+				To learn more about your network <br>
+				security posture, take the full <br>
+				self-assessment for free:
+
+				<a href="#" class="quiz-popup__btn">click here</a>
+				<span class="quiz-popup__renouncement close-popup">No, thanks</span>
+
+				<div class="quiz-social">
+					<div class="quiz-social__text">Share your score:</div>
+					<ul class="quiz-social__list">
+						<li>
+							<a href="#" class="quiz-social__icon">
+								<svg>
+									<use
+										xlink:href="https://staging.securanceconsulting.com/wp-content/themes/velesh_theme/static/img/svg-sprites/symbol/sprite.svg#twitter">
+									</use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="quiz-social__icon">
+								<svg>
+									<use
+										xlink:href="https://staging.securanceconsulting.com/wp-content/themes/velesh_theme/static/img/svg-sprites/symbol/sprite.svg#linkedin">
+									</use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="quiz-social__icon">
+								<svg>
+									<use
+										xlink:href="https://staging.securanceconsulting.com/wp-content/themes/velesh_theme/static/img/svg-sprites/symbol/sprite.svg#facebook">
+									</use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="quiz-social__icon">
+								<svg>
+									<use
+										xlink:href="https://staging.securanceconsulting.com/wp-content/themes/velesh_theme/static/img/svg-sprites/symbol/sprite.svg#email">
+									</use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const popupLinks = document.querySelectorAll('.popup-link');
+		const body = document.querySelector('body');
+		const lockPadding = document.querySelectorAll('.lock-padding');
+
+		let unlock = true;
+
+		const timeout = 800;
+
+		function openQuizPopup(id) {
+			let $el = document.querySelector(`${id}`);
+			if ($el) {
+				popupOpen($el)
+			} else {
+				throw new Error('Element not found');
+			}
+		}
+		// example
+		//openQuizPopup('#popupMessage');
+
+		if (popupLinks.length > 0) {
+			for (let index = 0; index < popupLinks.length; index++) {
+				const popupLink = popupLinks[index];
+				if (popupLink) {
+					popupLink.addEventListener('click', function (e) {
+						const popupName = popupLink.getAttribute('href').replace('#', '');
+						const curentPopup = document.getElementById(popupName);
+						popupOpen(curentPopup);
+						e.preventDefault();
+					});
+				}
+
+			}
+		}
+
+
+		const popupCloseIcon = document.querySelectorAll('.close-popup');
+		if (popupCloseIcon.length > 0) {
+			for (let index = 0; index < popupCloseIcon.length; index++) {
+				const el = popupCloseIcon[index];
+				el.addEventListener('click', function (e) {
+					popupClose(el.closest('.quiz-popup'));
+					e.preventDefault();
+				});
+			}
+		}
+
+		function popupOpen(curentPopup) {
+			if (curentPopup && unlock) {
+				const popupActive = document.querySelector('.quiz-popup.open');
+				if (popupActive) {
+					popupClose(popupActive, false);
+				} else {
+					bodyLock();
+				}
+				curentPopup.classList.add('open');
+				curentPopup.addEventListener('click', function (e) {
+					if (!e.target.closest('.quiz-popup_content')) {
+						popupClose(e.target.closest('.quiz-popup'));
+					}
+				});
+
+			}
+		}
+
+		function popupClose(popupActive, doUnlock = true) {
+			if (unlock) {
+				popupActive.classList.remove('open');
+				if (doUnlock) {
+					bodyUnlock();
+				}
+			}
+		}
+
+		function bodyLock() {
+			const lockPaddingValue = window.innerWidth - document.querySelector('body').offsetWidth + 'px';
+			let targetPadding = document.querySelectorAll('._lp');
+			if (targetPadding.length) {
+				for (let index = 0; index < targetPadding.length; index++) {
+					const el = targetPadding[index];
+					el.style.paddingRight = lockPaddingValue;
+				}
+			}
+
+			if (lockPadding.length > 0) {
+				for (let index = 0; index < lockPadding.length; index++) {
+					const el = lockPadding[index];
+					el.style.paddingRight = lockPaddingValue;
+				}
+			}
+
+			body.style.paddingRight = lockPaddingValue;
+			body.classList.add('lock');
+
+			unlock = false;
+			setTimeout(function () {
+				unlock = true;
+			}, timeout);
+		}
+
+		function bodyUnlock() {
+			let targetPadding = document.querySelectorAll('._lp');
+
+			setTimeout(function () {
+				if (targetPadding.length) {
+					for (let index = 0; index < targetPadding.length; index++) {
+						const el = targetPadding[index];
+						el.style.paddingRight = '0px';
+					}
+				}
+
+				for (let index = 0; index < lockPadding.length; index++) {
+					const el = lockPadding[index];
+					el.style.paddingRight = '0px';
+				}
+
+				body.style.paddingRight = '0px';
+				body.classList.remove('lock');
+			}, timeout);
+
+			unlock = false;
+			setTimeout(function () {
+				unlock = true;
+			}, timeout);
+		}
+
+		document.addEventListener('keydown', function (e) {
+			if (e.which === 27) {
+				const popupActive = document.querySelector('.quiz-popup.open');
+				popupClose(popupActive);
+			}
+		});
+
+		// === Polyfill ===
+		(function () {
+			if (!Element.prototype.closest) {
+				Element.prototype.closest = function (css) {
+					var node = this;
+					while (node) {
+						if (node.matches(css)) return node;
+						else node == node.parentElement;
+					}
+					return null;
+				};
+			}
+		})();
+
+		(function () {
+			if (!Element.prototype.matches) {
+				Element.prototype.matches = Element.prototype.matchesSelector ||
+					Element.prototype.webkitMatchesSelector ||
+					Element.prototype.mozMatchesSelector ||
+					Element.prototype.mozMatchesSelector;
+			}
+		})();
+// === AND Polyfill ===
+	</script>
+
+</body>
+
+</html>
