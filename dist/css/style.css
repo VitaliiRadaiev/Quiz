@@ -644,6 +644,10 @@ body {
   height: auto;
 }
 
+.sub-slide__column-2 .swiper-scrollbar-drag {
+  cursor: pointer;
+}
+
 .sub-slide__img {
   width: 100%;
   max-width: 736px;
