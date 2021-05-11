@@ -39,9 +39,7 @@
                                                 <img class="swiper-lazy" data-src="img/photo/slide1@1.5x.png" alt="">
                                             </div>
                                         </div>
-                                        <div class="sub-slide__column-2 swiper-container">
-                                            <div class="swiper-wrapper">
-                                                <div class="swiper-slide">
+                                        <div class="sub-slide__column-2">
                                                     <div class="sub-slide__progress"><span
                                                             class="sub-slide__progress-bar">0%</span>
                                                     </div>
@@ -118,9 +116,6 @@
                                                         <a href="#" class="sub-slide__btn sub-slide__btn-na">N/A</a>
                                                         <div class="sub-slide__btn sub-slide__btn-next">Next</div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-scrollbar"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1945,6 +1940,7 @@
                     dataSlider = new Swiper($slider, {
                         slidesPerView: 1,
                         spaceBetween: 0,
+                        autoHeight: true,
                         speed: 600,
                         touchRatio: 0,
                         nested: true,
@@ -1988,25 +1984,25 @@
                         })
                     }
 
-                    let columnScroll = $slider.querySelectorAll('.sub-slide__column-2');
-                    if (columnScroll.length) {
-                        columnScroll.forEach(slider => {
-                            let dataColumnScroll = new Swiper(slider, {
-                                direction: "vertical",
-                                slidesPerView: "auto",
-                                freeMode: true,
-                                observer: true,
-                                observeParents: true,
-                                observeSlideCheldren: true,
-                                scrollbar: {
-                                    el: slider.querySelector('.swiper-scrollbar'),
-                                    draggable: true,
-                                },
-                                mousewheel: true,
-                            });
-                        })
+                    // let columnScroll = $slider.querySelectorAll('.sub-slide__column-2');
+                    // if (columnScroll.length) {
+                    //     columnScroll.forEach(slider => {
+                    //         let dataColumnScroll = new Swiper(slider, {
+                    //             direction: "vertical",
+                    //             slidesPerView: "auto",
+                    //             freeMode: true,
+                    //             observer: true,
+                    //             observeParents: true,
+                    //             observeSlideCheldren: true,
+                    //             scrollbar: {
+                    //                 el: slider.querySelector('.swiper-scrollbar'),
+                    //                 draggable: true,
+                    //             },
+                    //             mousewheel: true,
+                    //         });
+                    //     })
 
-                    }
+                    // }
                 })
             }
         }
