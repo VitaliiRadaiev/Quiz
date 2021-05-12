@@ -3,6 +3,7 @@
     position: relative;
     overflow: hidden;
     padding-bottom: 82px;
+    margin-bottom: 93px;
 
     @media (max-width: 1267.8px) {
         padding-top: 100px;
@@ -11,11 +12,13 @@
     @media (max-width: $md2+px) {
         padding-top: 35px;
         background-image: linear-gradient(0deg, #fefffe 0%, #f5f9f4 36%, rgba(#d5dfca, 0.3) 100%);
-        min-height: 100vh;
+        padding-bottom: 0;
     }
 
     @media (max-width: $md3+px) {
         padding-bottom: 0;
+        min-height: 100vh;
+       
     }
 
     &:before {
@@ -255,6 +258,7 @@
     font-weight: 600;
     text-transform: uppercase;
     transition: all 0.3s ease;
+    cursor: pointer;
 
     @media (max-width: $md3+px) {
         min-height: 48px;
@@ -288,6 +292,12 @@
 }
 
 .quiz-model {
+    display: none;
+    padding-bottom: 50px;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
     &__body {
         margin: 0 auto;
         max-width: 1585px;
@@ -297,12 +307,11 @@
 
     &__title {
         color: #414042;
-        font-size: 46px;
+        font-size: 40px;
         font-weight: 700;
-        letter-spacing: 0.46px;
         line-height: 55.2px;
         text-transform: uppercase;
-        margin-bottom: 57px;
+        margin-bottom: 45px;
         text-align: center;
     }
 
@@ -315,8 +324,11 @@
     }
 
     &__item-1 {
+        & .quiz-model__label-wrap {
+            padding-top: 74px;
+        }
         & .quiz-model__img {
-            width: 75.75%;
+            width: 77.75%;
         }
 
         & .quiz-model__popup-trigger {
@@ -329,13 +341,14 @@
     }
 
     &__item-2 {
+        margin-top: 1%;
         & .quiz-model__label-wrap {
             left: auto;
             right: 0;
         }
         & .quiz-model__img {
-            width: 47.13%;
-            transform: translateX(26%);
+            width: 48.13%;
+            transform: translateX(29%);
         }
 
         & .quiz-model__popup-trigger {
@@ -350,8 +363,8 @@
     &__item-3 {
         margin-top: -5%;
         & .quiz-model__img {
-            width: 47.13%;
-            transform: translateX(-26%);
+            width: 48.13%;
+            transform: translateX(-24%);
         }
 
         & .quiz-model__popup-trigger {
@@ -363,6 +376,7 @@
         }
     }
     &__item-4 {
+        margin-top: -1.3%;
         & .quiz-model__label-wrap {
             &.quiz-model__label-wrap-1 {
                 padding-top: 47px;
@@ -377,13 +391,13 @@
             }
         }
         & .quiz-model__img {
-            width: 55.89%;
-            transform: translateX(22.5%);
+            width: 56.89%;
+            transform: translateX(24.2%);
         }
 
         & .quiz-model__popup-trigger {
             &.quiz-model__popup-trigger-1 {
-                width: 60%;
+                width: 58.5%;
                 height: 80%;
                 left: 0;
                 bottom: 0;
@@ -418,7 +432,7 @@
         }
         & .quiz-model__img {
             width: 58.18%;
-            transform: translateX(-15.5%);
+            transform: translateX(-14.5%);
         }
 
         & .quiz-model__popup-trigger {
@@ -462,11 +476,19 @@
         align-items: center;
         background-color: $green;
 
+        @media (max-width: 1267.8px) {
+            min-width: 50px;
+        }
+
         & > span {
             color: #fbf6f6;
             font-size: 50px;
             font-weight: 700;
             position: relative;
+
+            @media (max-width: 1267.8px) {
+                font-size: 30px;
+            }
 
             &:before {
                 position: absolute;
@@ -526,4 +548,164 @@
             }
         }
     }
+}
+
+
+.quiz-home-popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(180deg, #fefffe 0%, #f5f9f4 36%, #d5dfca 100%);
+	z-index: 100;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: all 0.8s ease 0s;
+
+
+	&.open {
+		opacity: 1;
+		visibility: visible;
+
+		& .quiz-home-popup_content {
+			opacity: 1;
+		}
+	}
+
+	&_body {
+		min-height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1.5rem 3rem;
+
+		@media (max-width: $md3+px) {
+			padding: 15px;
+		}
+	}
+
+	&_content {
+		background: #fff;
+        max-width: 1322px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        background-color: #ffffff;
+		position: relative;
+		width: 100%;
+		transition: all 0.8s ease 0s;
+		opacity: 0;
+		outline: 0;
+		text-align: center;
+		padding: 45px 94px 45px;
+		box-sizing: border-box;
+		font-family: $monserrat;
+
+		@media (max-width: $md3+px) {
+			padding: 40px 15px 30px;
+		}
+
+	}
+
+	&__close {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		padding: 3px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		@media (min-width: 992px) {
+			&:hover {
+				background-color: rgba(#e5e5eb, 0.8);
+			}
+		}
+
+		& > span {
+			display: block;
+			position: relative;
+			height: 14px;
+			width: 14px;
+			transform: rotate(45deg);
+
+			&:before {
+				position: absolute;
+				content: "";
+				top: 0;
+				left: 50%;
+				width: 1px;
+				transform: translate(-50%, 0);
+				height: 100%;
+				background-color: $textColor;
+			}
+			&:after {
+				position: absolute;
+				content: "";
+				top: 50%;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				transform: translate(0, -50%);
+				background-color: $textColor;
+			}
+		}
+	}
+
+    &:not(#quizModel-1) {
+        & .quiz-home-popup__img {
+            & img {
+                max-width: 60%;
+                max-height: 60%;
+            }
+        }
+    }
+
+    &#quizModel-8, &#quizModel-7, &#quizModel-6, &#quizModel-5, &#quizModel-4 {
+        & .quiz-home-popup__img {
+            & img {
+                max-width: 40%;
+                max-height: 40%;
+
+                @media (max-width: 1267.8px) {
+                    max-width: 60%;
+                    max-height: 60%;
+                }
+            }
+        }
+    }
+
+    &__img {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        & img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__text {
+        max-width: 934px;
+        margin: 0 auto 18px;
+        &.text-content {
+            color: $green;
+            & *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__btn {
+        &.btn-default {
+            min-width: 200px;
+            min-height: 45px;
+            font-size: 14px;
+        }
+    }
+
 }

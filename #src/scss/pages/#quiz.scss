@@ -1,24 +1,13 @@
 html {
     height: 100%;
 }
-body {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.content {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    min-height: 0;
-}
+
 .main-slider {
     flex: 1 1 auto;
     min-width: 0;
     min-height: 0;
     width: 100%;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
@@ -32,18 +21,25 @@ body {
             position: relative;
             min-width: 0;
             min-height: 0;
+ 
         }
+    }
+
+    &.swiper-container {
+        padding-bottom: 0;
+    }
+    & .swiper-container {
+        padding-bottom: 0;
     }
 }
 
 .sub-slider {
     min-width: 0;
-    height: 100%;
     & .swiper-wrapper {
         height: 100%;
     }
     & .swiper-slide {
-        height: 100vh;
+        height: 100vh !important;
         overflow-y: auto;
     }
 }
@@ -201,6 +197,10 @@ body {
         @media (max-width: $md2+px) {
             display: flex;
             flex-direction: column;
+        }
+
+        &.swiper-container {
+            overflow: visible;
         }
 
         & .swiper-slide {
@@ -386,6 +386,10 @@ body {
                     background-color: rgba(131, 186, 73, 0.2);
                 }
 
+                @media (max-width: $md3+px) {
+                    padding: 0 0 9px 0;
+                }
+
                 & * {
                     cursor: pointer;
                 }
@@ -552,7 +556,7 @@ body {
                 display: block;
                 width: 17px;
                 height: 23px;
-                background: url("../img/icons/arrow-right.svg") center no-repeat;
+                background: url("https://staging.securanceconsulting.com/wp-content/themes/velesh_theme/static/img/arrow-right.svg") center no-repeat;
                 background-size: 362%;
             }
         }
@@ -580,10 +584,15 @@ body {
                 display: block;
                 width: 17px;
                 height: 23px;
-                background: url("../img/icons/arrow-right.svg") center no-repeat;
+                background: url("https://staging.securanceconsulting.com/wp-content/themes/velesh_theme/static/img/arrow-right.svg") center no-repeat;
                 background-size: 362%;
                 transform: scale(-1, 1);
             }
         }
     }
+}
+
+.sub-slide__quest-list.quest-list input[type=checkbox]:checked+.check-fld, .sub-slide__quest-list.quest-list input[type=radio]:checked+.check-fld {
+    background: url(../img/icons/check.svg) center center no-repeat !important;
+    background-size: 91% !important;
 }
