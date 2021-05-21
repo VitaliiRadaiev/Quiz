@@ -3,46 +3,10 @@ html {
 }
 
 .main-slider {
-    flex: 1 1 auto;
     min-width: 0;
-    min-height: 0;
     width: 100%;
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    & > .swiper-wrapper {
-        flex-direction: column;
-
-        & > .swiper-slide {
-            flex: 1 0 100%;
-            position: relative;
-            min-width: 0;
-            min-height: 0;
- 
-        }
-    }
-
-    &.swiper-container {
-        padding-bottom: 0;
-    }
-    & .swiper-container {
-        padding-bottom: 0;
-    }
 }
 
-.sub-slider {
-    min-width: 0;
-    & .swiper-wrapper {
-        height: 100%;
-    }
-    & .swiper-slide {
-        height: 100vh !important;
-        overflow-y: auto;
-    }
-}
 
 .sub-slide {
     background-image: linear-gradient(180deg, #fefffe 0%, #f5f9f4 36%, #d5dfca 100%);
@@ -53,10 +17,18 @@ html {
     font-weight: 400;
     line-height: 1.44em;
     min-width: 0;
-    min-height: 0;
 
     @media (max-width: 1023.8px) {
         background-image: linear-gradient(0deg, #fefffe 0%, #f5f9f4 36%, rgba(#d5dfca, 0.3) 100%);
+    }
+
+    & .all-done .contacts_form__title {
+        line-height: 1em;
+        padding-top: 20px
+    }
+
+    & .all-done .contacts_form {
+        padding-right: 0;
     }
 
     &__label {
@@ -114,6 +86,7 @@ html {
             padding-bottom: 110px;
             min-height: 100%;
             margin-bottom: 0;
+            margin-top: 75px;
         }
 
         @media (max-width: $md3+px) {
@@ -122,6 +95,7 @@ html {
             min-height: 100%;
             padding-top: 43px;
             padding-bottom: 0;
+            margin-top: 0;
         }
 
         @media (max-width: 1023.8px) {
@@ -216,7 +190,6 @@ html {
             flex: 0 0 100%;
 
             & .swiper-slide {
-                //height: auto;
                 display: flex;
                 flex-direction: column;
             }
@@ -230,10 +203,7 @@ html {
         transform: translateX(-13px);
         position: relative;
         padding-top: 50px;
-        margin-top: 50px;
-        @media (max-width: 1267.8px) {
-            margin-right: 20px;
-        }
+
 
         & img {
             display: block;
@@ -308,7 +278,7 @@ html {
         padding-left: 12px;
 
         @media (max-width: $md3+px) {
-            padding-left: 27px;
+            padding-left: 40px;
         }
     }
 
@@ -593,6 +563,6 @@ html {
 }
 
 .sub-slide__quest-list.quest-list input[type=checkbox]:checked+.check-fld, .sub-slide__quest-list.quest-list input[type=radio]:checked+.check-fld {
-    background: url(../img/icons/check.svg) center center no-repeat !important;
+    background: url(https://staging.securanceconsulting.com/wp-content/themes/velesh_theme/static/img/check.svg) center center no-repeat !important;
     background-size: 91% !important;
 }

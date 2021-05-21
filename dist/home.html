@@ -41,7 +41,7 @@
                 </ul>
                 <div class="promo-header__btn-group">
                     <a href="#" class="btn-default">start the assessment</a>
-                    <a href="#" class="btn-default">watch the video</a>
+                    <div class="btn-default quiz-model__watch-video" data-vimeo="148922201">watch the video</в>
                 </div>
                 <div class="promo-header__bottom text-content">
                     <p>Scroll down to see the model sections</p>
@@ -137,7 +137,7 @@
             </div>
             <div class="quiz-model__btn-group">
                 <a href="#" class="btn-default">start the assessment</a>
-                <a href="#" class="btn-default">watch the video</a>
+                <div  class="btn-default quiz-model__watch-video" data-vimeo="148922201">watch the video</div>
             </div>
         </div>
     </section>
@@ -263,12 +263,11 @@
                     triggers.forEach(trigger => {
                         let id = trigger.getAttribute('href').match(/#.+$/gi).join('').replace('#', '');
                         let $el = document.getElementById(id);
-                        let topPoint = $el.getBoundingClientRect().top;
-                        
+  
                         trigger.addEventListener('click', (e) => {
                             e.preventDefault();
                             window.scrollTo({
-                                top: topPoint,
+                                top: $el.offsetTop,
                                 behavior: 'smooth'
                             })
                         })
