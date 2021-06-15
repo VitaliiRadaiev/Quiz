@@ -5,6 +5,20 @@ html {
 .main-slider {
     min-width: 0;
     width: 100%;
+
+    &.swiper-container {
+        padding-bottom: 0;
+    }
+
+    & .swiper-slide {
+        @media (max-width: 1023.8px) {
+            opacity: 0 !important;
+
+            &.swiper-slide-active {
+                opacity: 1 !important;
+            }
+        }
+    }
 }
 
 
@@ -29,6 +43,12 @@ html {
 
     & .all-done .contacts_form {
         padding-right: 0;
+    }
+
+    &.swiper-slide-active {
+        & .all-done .contacts_form  {
+            pointer-events: auto;
+        }
     }
 
     &__label {
@@ -81,6 +101,7 @@ html {
         min-width: 0;
         min-height: calc(100% - 120px);
         position: relative;
+    
 
         @media (max-width: $md2+px) {
             padding-bottom: 110px;
@@ -222,6 +243,12 @@ html {
         width: 38px;
         height: 38px;
         cursor: pointer;
+        transition: all .3s ease;
+        border-radius: 50%;
+
+        &:hover {
+            box-shadow: 0 0 15px rgba(#000, 0.2);
+        }
 
         & img {
             width: 100%;

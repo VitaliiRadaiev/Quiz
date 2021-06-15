@@ -137,7 +137,7 @@
             </div>
             <div class="quiz-model__btn-group">
                 <a href="#" class="btn-default">start the assessment</a>
-                <div  class="btn-default quiz-model__watch-video" data-vimeo="148922201">watch the video</div>
+                <a href="#quizVideo"  class="btn-default quiz-model__watch-video popup-link">watch the video</a>
             </div>
         </div>
     </section>
@@ -254,6 +254,20 @@
 			</div>
 		</div>
 	</div>
+    <div class="quiz-home-popup" id="quizVideo">
+		<div class="quiz-home-popup_body">
+			<div class="quiz-home-popup_content">
+				<div class="quiz-home-popup__close close-popup"><span></span></div>
+                <div class="quiz-home-popup__video">
+                    <video playsinline preload="auto" poster="https://staging.securanceconsulting.com/wp-content/uploads/2021/04/financial-services-1.jpeg">
+                        <source src="https://staging.securanceconsulting.com/wp-content/themes/velesh_theme/sc/video.mp4" type="video/mp4"> 
+                    </video>
+                    <div class="quiz-home-popup__play play-button"></div>
+                </div>
+                <div class="quiz-home-popup__btn btn-default close-popup">BACK to assessment</div>
+			</div>
+		</div>
+	</div>
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {
@@ -341,6 +355,10 @@
 
 		function popupClose(popupActive, doUnlock = true) {
 			if (unlock) {
+                let video = document.querySelector('.quiz-home-popup__video video');
+                if(video) {
+                    video.pause()
+                }
 				popupActive.classList.remove('open');
 				if (doUnlock) {
 					bodyUnlock();
@@ -433,6 +451,18 @@
 
 
         });
+
+        let videoWrap = document.querySelector('.quiz-home-popup__video');
+        if(videoWrap) {
+            let video = videoWrap.querySelector('video');
+            let btn = videoWrap.querySelector('.quiz-home-popup__play');
+            console.log(video, btn);
+            btn.addEventListener('click', () => {
+                video.play()
+                video.setAttribute('controls', true);
+                btn.style.opacity = 0;
+            })
+        }
     </script>
 </body>
 </html>
